@@ -1,0 +1,102 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Solar System Container */
+.solar-system {
+    position: relative;
+    width: 800px;
+    height: 800px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Sun */
+.sun {
+    background-color: #ffcc00;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    position: absolute;
+    z-index: 10;
+    box-shadow: 0 0 30px rgba(255, 204, 0, 0.8);
+}
+
+/* Earth Orbit */
+.earth-orbit {
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    border: 2px dashed #fff;
+    border-radius: 50%;
+    animation: rotate-earth 20s infinite linear;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Earth */
+.earth {
+    background-color: #3b8d99;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    position: absolute;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    top: 0; /* Center Earth on its orbit */
+}
+
+/* Moon Orbit */
+.moon-orbit {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    animation: rotate-moon 5s infinite linear;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0; /* Center Moon Orbit within Earth */
+}
+
+/* Moon */
+.moon {
+    background-color: #d3d3d3;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    position: absolute;
+    top: 0; /* Center Moon on its orbit */
+}
+
+/* Animations */
+@keyframes rotate-earth {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes rotate-moon {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
